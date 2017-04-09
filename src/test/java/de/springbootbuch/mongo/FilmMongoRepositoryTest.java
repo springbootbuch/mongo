@@ -26,8 +26,10 @@ public class FilmMongoRepositoryTest {
 	@Test
 	public void filmShouldBeSaved() {
 		Film film = filmRepository.save(
-			new Film("Der wilde wilde Westen", Year.of(1974)));
+			new Film("Der wilde wilde Westen", 
+			Year.of(1974)));
 		assertThat(film.getId(), is(notNullValue()));
-		assertThat(film.getReleaseYear().getValue(), is(1974));
+		assertThat(film.getReleaseYear().getValue(), 
+			is(1974));
 	}
 }
