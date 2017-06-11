@@ -1,7 +1,6 @@
 package de.springbootbuch.mongo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.Year;
 
 /**
  * Part of springbootbuch.de.
