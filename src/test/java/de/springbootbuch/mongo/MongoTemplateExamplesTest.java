@@ -16,6 +16,7 @@ import org.bson.codecs.configuration.CodecRegistries;
 import static org.bson.codecs.configuration.CodecRegistries.fromCodecs;
 import org.bson.codecs.configuration.CodecRegistry;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertThat;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -128,6 +129,7 @@ public class MongoTemplateExamplesTest {
 			.find(query(where("actors.lastName").is("GUINESS")),
 				Film.class);
 		assertThat(films.size(), is(2));
+		assertThat(films.get(0).getReleaseYear(), is(notNullValue()));
 	}
 
 	/**
