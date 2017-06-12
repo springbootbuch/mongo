@@ -1,7 +1,6 @@
 package de.springbootbuch.mongo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.Year;
 
 /**
  * Part of springbootbuch.de.
@@ -11,6 +10,6 @@ import java.time.Year;
  */
 public abstract class FilmConstructorMixIn {
 
-	FilmConstructorMixIn(@JsonProperty("title") String a, @JsonProperty("releaseYear") Year b) {
+	FilmConstructorMixIn(@JsonProperty("title") String a, @JsonProperty("releaseYear") Integer b) {
 	}
 }

@@ -18,11 +18,11 @@ public class Film {
 	
 	private final String title;
 	
-	private final Year releaseYear;
+	private final Integer releaseYear;
 	
 	private final List<Actor> actors = new ArrayList<>();
 
-	public Film(String title, Year releaseYear) {
+	public Film(String title, Integer releaseYear) {
 		this.title = title;
 		this.releaseYear = releaseYear;
 	}
@@ -35,7 +35,7 @@ public class Film {
 		return title;
 	}
 
-	public Year getReleaseYear() {
+	public Integer getReleaseYear() {
 		return releaseYear;
 	}
 

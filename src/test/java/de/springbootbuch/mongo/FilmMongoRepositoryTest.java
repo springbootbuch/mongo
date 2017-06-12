@@ -1,6 +1,5 @@
 package de.springbootbuch.mongo;
 
-import java.time.Year;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertThat;
@@ -27,9 +26,9 @@ public class FilmMongoRepositoryTest {
 	public void filmShouldBeSaved() {
 		Film film = filmRepository.save(
 			new Film("Der wilde wilde Westen", 
-			Year.of(1974)));
+			1974));
 		assertThat(film.getId(), is(notNullValue()));
-		assertThat(film.getReleaseYear().getValue(), 
+		assertThat(film.getReleaseYear(), 
 			is(1974));
 	}
 }
