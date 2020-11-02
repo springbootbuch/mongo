@@ -1,13 +1,12 @@
 package de.springbootbuch.mongo;
 
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.notNullValue;
-import static org.junit.Assert.assertThat;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static org.assertj.core.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * Part of springbootbuch.de.
@@ -15,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @author Michael J. Simons
  * @author @rotnroll666
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @DataMongoTest
 public class FilmMongoRepositoryTest {
 
@@ -27,8 +26,8 @@ public class FilmMongoRepositoryTest {
 		Film film = filmRepository.save(
 			new Film("Der wilde wilde Westen", 
 			1974));
-		assertThat(film.getId(), is(notNullValue()));
-		assertThat(film.getReleaseYear(), 
-			is(1974));
+		assertThat(film.getId()).isNotNull();
+		assertThat(film.getReleaseYear())
+			.isEqualTo(1974);
 	}
 }
